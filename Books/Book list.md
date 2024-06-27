@@ -4,6 +4,8 @@
 - 
 # 理学
 - [钱学森理学手稿05](https://discord.com/channels/1218507417533419531/1237794177756958751)
+- [原神丘丘语教材](https://github.com/AuroraDasiy/Cloud/blob/main/%E5%8E%9F%E7%A5%9E%E4%B8%98%E4%B8%98%E8%AF%AD%E6%95%99%E6%9D%90.pdf)
+- [原神草元素导论](https://github.com/AuroraDasiy/Cloud/blob/main/%E5%8E%9F%E7%A5%9E%E8%8D%89%E5%85%83%E7%B4%A0%E5%AF%BC%E8%AE%BA%20.pdf)
 # 文学
 - [鲁迅全集](https://discord.com/channels/1218507417533419531/1243447034661568564)
 # 生物与医学
