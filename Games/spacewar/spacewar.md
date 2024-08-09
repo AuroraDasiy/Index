@@ -1,3 +1,16 @@
+online-fix.me 这个网站是 将steam学习版游戏伪装成steam游戏spacewar(开发人员测试游戏)
+
+进而借助steam网络进行联机的操作  艾尔登法环.rar这个就是用spacewar联机实例
+
+
+
+
+
+
+
+
+
+
 要在VBScript中初始化SteamAPI并将游戏伪装成Spacewar，需要创建一个VBScript文件，并通过运行该脚本来设置所需的配置。这包括创建`steam_appid.txt`文件并启动你的游戏。
 
 以下是一个示例VBScript代码，用于创建`steam_appid.txt`文件并启动你的游戏：
