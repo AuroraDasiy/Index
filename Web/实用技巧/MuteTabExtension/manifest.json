@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Mute Tab Button",
+    "version": "1.0",
+    "description": "Add a mute/unmute button to the browser tab.",
+    "permissions": ["tabs"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_icon": {
+        "16": "icons/mute.png",
+        "32": "icons/mute.png"
+      },
+      "default_title": "Mute Tab"
+    },
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
+  

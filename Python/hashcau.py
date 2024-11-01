@@ -1,14 +1,12 @@
-import hashlib
+from PIL import Image
 
-def get_file_hash(file_path, algorithm='sha256'):
-    hash_func = hashlib.new(algorithm)
-    with open(file_path, 'rb') as f:
-        for chunk in iter(lambda: f.read(4096), b""):
-            hash_func.update(chunk)
-    return hash_func.hexdigest()
+# Load the uploaded image
+input_path = 'unmute.png'
+output_path_32x32 = 'unmute_icon_32x32.png'
 
-# 示例用法
-file_path = 'python.md'
-print(get_file_hash(file_path, 'md5'))
+# Open the image and resize it to 32x32
+with Image.open(input_path) as img:
+    img_resized = img.resize((32, 32), Image.Resampling.LANCZOS)
+    img_resized.save(output_path_32x32)
 
-#14993656f3c4180ed50d4ccdea474230
+output_path_32x32
