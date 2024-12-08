@@ -21,3 +21,7 @@ decimal  binary octal hexadecimal   10 2 8 16
 0b  二进制    
 16= 0x1 = 020  
 
+
+# 老翁凯C语言
+关系运算高于赋值低于算数运算
+
