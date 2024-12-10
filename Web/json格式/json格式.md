@@ -212,3 +212,6 @@ console.log(newJsonString); // 输出: {"name":"Alice","age":25}
 
 ### 总结
 JSON 是一种简单而强大的数据格式，适用于各种场景。掌握 JSON 的基本语法和使用方法是现代编程的基础技能之一。如果你需要更深入了解某些特定用法或工具，可以告诉我，我会进一步讲解！
+![alt text](image.png)
+
+
