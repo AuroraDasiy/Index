@@ -1,0 +1,3 @@
+D:/Projects/Index/C/projects/chatgpt_vv_share/cmake-build-debug/CMakeFiles/hellowrold.dir
+D:/Projects/Index/C/projects/chatgpt_vv_share/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Projects/Index/C/projects/chatgpt_vv_share/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,3 +1,0 @@
-D:/Projects/Index/C/projects/hellowrold/cmake-build-debug/CMakeFiles/hellowrold.dir
-D:/Projects/Index/C/projects/hellowrold/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Projects/Index/C/projects/hellowrold/cmake-build-debug/CMakeFiles/rebuild_cache.dir
