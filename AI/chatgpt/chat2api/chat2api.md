@@ -8,6 +8,6 @@
 - vv.md vv佬发的refresh token  
 vv佬的频道和群 https://t.me/milaoshuwuwu https://t.me/sanhonghua
 
-- https://t.me/+PB8ho108sa4wYTVl 这个tg群里有 仅适用于 share.aivvm.org/?token=
+- https://vv-plus.voct.org/ 这 仅适用于 share.aivvm.org/?token=
 
 
