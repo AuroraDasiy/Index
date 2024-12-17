@@ -1,3 +1,0 @@
-D:/Projects/Index/C/projects/Commit_Git/cmake-build-debug/CMakeFiles/Commit_Git.dir
-D:/Projects/Index/C/projects/Commit_Git/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Projects/Index/C/projects/Commit_Git/cmake-build-debug/CMakeFiles/rebuild_cache.dir
