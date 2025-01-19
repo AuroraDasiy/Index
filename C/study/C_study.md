@@ -24,6 +24,7 @@ decimal  binary octal hexadecimal   10 2 8 16
 
 
 # 老翁凯C语言
+
 关系运算高于赋值低于算数运算
 
 有数学归纳法可得用"1"来判断循环
@@ -211,6 +212,7 @@ int main() {
 ---
 
 ## **总结**
+
 - `printf` 是一个功能强大的格式化输出函数，通过格式说明符和修饰符，可以灵活地输出各种类型的数据。
 - 常用说明符包括 `%d`（整数）、`%f`（浮点数）、`%c`（字符）、`%s`（字符串）等。
 - 可以通过宽度、精度和对齐方式进一步控制输出格式。
@@ -255,7 +257,7 @@ prime[cnt++]=  实现往后加一个的效果
 
 指针的使用场景![alt text](image-5.png)
 
-![alt text](image-6.png)  const int * p 传进去一个结构防止改变结构中的东西  int * const p 指的是p只能指向一块区域 数组就是一个后者的指针 不能数组++ 因为数组只能指向第一个
+![alt text](image-6.png)  const int * p 传进去一个结构防止改变结构中的东西  int * const p 指的是p只能指向一块区域 数组就是一个后者的指针 不能数组++ 因为数组只能指向第一个  函数参数一般传进来前const的值
 
 指针之差就是 地址之差/sizeof(int)
 
@@ -267,3 +269,23 @@ void* 是单位为1的指针  (void*) 强制类型转换
 
 字符串 char a[10]; scanf("%9s",a); 格式输出限制长度
 char * a[3] 指针数组 数组的元素是地址
+
+
+# 洛谷习题
+## 阿斯克码
+'A' 65 'a' 97差了32;  '1'是49 
+
+## 四舍五入
+```
+#include <stdio.h>
+#include <math.h>
+//round()返回的是一个整数;
+int main() {
+    double num = 3.14159;
+    double scale = 100.0; // 保留两位小数
+    double rounded = round(num * scale) / scale;
+    printf("Rounded value: %.2f\n", rounded); // 输出: 3.14
+    return 0;
+}
+```
+double 用%lf  %lf 也能整数输入

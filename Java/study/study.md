@@ -109,7 +109,8 @@ int number =r.nextInt(10);  //左闭右开 0~9;
 
 
 基本数据类型和引用数据类型
-引用数据类型:
+引用数据类型: String
+
 int[] array=new int[] {1,2,3};
 int[] array=new int[10]  10长度的空数组
 int[] array= {1,2,3}
@@ -117,6 +118,57 @@ int[] array= {1,2,3}
 array.length
 
 
+对象就是地址(指针)  new 出来的对象都是堆中的地址
 
+int [] arr=new int[3];
+arr.length
+int []是一个特殊的对象
 
+public static int f(int a,int b){}  public static int f(int a,int b);这叫方法的重载;
+同一个类同名函数但参数不同(参数的类别多少顺序)的方法叫做重载,不用关注返回值相不相同,void int f  参数一样 也不是重载
+相同功能的方法起成一个名字,进行方法重载
 
+基本数据类型是栈中内存  引用数据类型是堆中的地址(指针)
+
+---
+
+面向对象,javabean类  测试类
+类是将现实东西抽象出来 用其中的成员变量表示属性 类的方法表示属性之间的关系 变量和方法总体构成类的结构 真想抽象代数
+成员变量  成员变量能干什么叫做成员方法
+对象代表什么,就得封装对应的数据,并提供数据对应的行为
+
+private 成员变量 只能在本类中访问成员变量
+
+this.age this使得变量是成员变量 否则就 就近原则
+```
+public class Nvpengyou {
+    public Nvpengyou(){
+
+    }
+    public Nvpengyou(int age){
+        this.age=age;
+    }
+
+    private int age;
+    
+    public int setAge(int age){
+      if(age>18){
+        this.age=age;
+        return 0;
+      }else{
+        return -1;
+      }
+    }
+    public int getAge(){
+      return this.age;
+    }
+
+}
+```
+
+构造方法![alt text](image-11.png) ![alt text](image-12.png)
+把空参构造和有参构造方法都写出来 因为项目是团队合作需要大家一起do
+标准javabean类![alt text](image-13.png)
+PTG插件 右键一键javabean
+
+debug是个好东西

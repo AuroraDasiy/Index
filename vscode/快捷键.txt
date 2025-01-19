@@ -1,0 +1,2 @@
+ctrl k +ctrl 0  折叠所有代码块
+ctrl k+ CTRL j  展开所有代码块
