@@ -133,7 +133,8 @@ public static int f(int a,int b){}  public static int f(int a,int b);这叫方�
 ---
 
 面向对象,javabean类  测试类
-类是将现实东西抽象出来 用其中的成员变量表示属性 类的方法表示属性之间的关系 变量和方法总体构成类的结构 真想抽象代数
+类 构造的对象主要通过类的方法进行操作对象
+类是将现实东西抽象出来的集合 用其中的成员变量表示属性 类的方法表示属性之间的关系 变量和方法总体构成类的结构 真想抽象代数
 成员变量  成员变量能干什么叫做成员方法
 对象代表什么,就得封装对应的数据,并提供数据对应的行为
 
@@ -171,4 +172,127 @@ public class Nvpengyou {
 标准javabean类![alt text](image-13.png)
 PTG插件 右键一键javabean
 
-debug是个好东西
+debug是个好东西 
+static 静态是指不创建对象也能用的成员变量或者方法
+
+Scanner sc=new Scanner(System.in)
+sc.next()  nextInt() nextDouble() 遇到空格制表符 回车直接停止 和c中的输入流一样  nextLine() 仅遇到回车才停止
+
+对象数组
+Car[] arr=new Car[3];
+Scanner sc=new Scanner(System.in)
+for(int i=0;i<4;i++){
+    Car c=new Car();
+    String brand=sc.next();
+    c.setBrand(brand);
+    arr[i]=c;
+}
+
+## String
+.length()  .charAt(i)  +
+.append() .reverse() .length()
+构造方法![alt text](image-14.png) 后边两种可参考C语言中的字符串没有\0
+
+String s1.equals(String s2);equalsIgnoreCase()忽略大小写
+sout("**"+i+"**")  sout可以这样用
+str.length  str.charAt(i) 字符串的索引 相对于 C语言的 字符串数组索引
+```
+//统计字符串的个数
+  String str=new String("aabb");
+        int[] sum=new int[1001];
+        for (int i=0;i<str.length();i++){
+            sum[(int)str.charAt(i)]+=1;
+        }
+        System.out.println(sum[97]+" "+sum[98]);
+//字符串反转
+public static String fanZhuan(String str){
+        String str1=new String("");
+        for(int i=str.length()-1;i>=0;i--){
+            str1=str1+str.charAt(i);
+
+        }return str1;
+```
+
+字符串的拼接 + 运算符能智能把类型转换成String "a"+int i=="ai"
+
+StringBuilder String容器 String 效率低不可变化 而这个容器类可以变化
+仅在字符串拼接和反转需要用到StringBuilder
+```
+StringBuilder sb=new StringBuilder("abc");
+sb.append("");
+sb.reverse();
+sb.length();
+
+
+String str=new String("1221");
+StringBuilder sb=new StringBuilder();
+sb.append(str);//加入到容器中
+sb.reverse();
+sb.toString();//容器再变成字符串
+
+
+```
+数组是特殊的指针所以 length不是length() java的字符串很好操作因为有+运算符而且还有StringBuilder容器类可用
+
+## ArrayList
+集合和数组根本区别就是集合长度可变且集合里边是对象
+集合不能存储基本数据类型仅能存引用数据类型 基本数据类型包装类可以存进去![alt text](image-15.png)
+集合是一个容器为了方便数据机构 方法肯定有增删改查
+ArrayList<String> list =new ArrayList<String>();
+list.add("");增
+list.remove(0);ist.remove("");删
+list.set(0."aaa");改
+list.get(0);查
+list.size();
+
+```
+ArrayList<Integer> list=new ArrayList<Integer>()
+
+```
+
+## Math API
+
+## 小算法
+### 查找
+![alt text](image-16.png)
+#### 基本查找
+```
+ public static ArrayList<Integer> basicSearch(ArrayList<Integer> list,int tgt) {
+        ArrayList<Integer> ret = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i) == tgt) {
+                ret.add(i);
+            }
+        }
+        return ret;
+    }
+```
+#### 二分查找
+min mid man
+```
+//二分查找
+    public static ArrayList<Integer> erfenSearch(ArrayList<Integer> list, int target) {
+        ArrayList<Integer> ret=new ArrayList<>();
+        int min=0;int max=list.size()-1;
+        while(min<=max){   //注意是<=因为最后还要再判断一次>
+            int mid=(max+min)/2;
+            if(list.get(mid)==target){
+                ret.add(mid);
+                break;
+            }
+            else if(list.get(mid)>target){
+                max=mid-1;
+                min=min;
+            }
+            else{
+                min=mid+1;
+                max=max;
+            }
+
+        }
+        return ret;
+    }
+```
+
+
+

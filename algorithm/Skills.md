@@ -1,6 +1,95 @@
-# 数论("%"(mod) and /) 
+# Tips
+## new
+对某个对象进行操作的时候,最好把结果弄到一个new的对象上例如矩阵转置结果,new在一个新矩阵里否则原矩阵操作困难;
+```
+#include<stdio.h>
 
-## 辗转相除法
+int main(){
+    int n, m;
+    scanf("%d %d", &n, &m);  // 输入矩阵的行数和列数
+    int arr[n][m];            // 原矩阵
+    int transpose[m][n];      // 转置矩阵
+
+    // 读入原矩阵
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    // 进行转置
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            transpose[j][i] = arr[i][j];
+        }
+    }
+
+    // 输出转置矩阵
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (j == n - 1) {
+                printf("%d\n", transpose[i][j]);  // 最后一项输出换行
+            } else {
+                printf("%d ", transpose[i][j]);  // 其他项输出空格
+            }
+        }
+    }
+
+    return 0;
+}
+
+```
+
+## temp
+交换两个数需用道中间变量temp;
+
+# 数论("%"(mod) and /) 
+## 进制(mod)
+
+## 质分解
+奇数的奇数分解一定是素分解
+```
+#include <stdio.h>
+
+// 函数：质因数分解
+void prime_factors(int n) {
+    // 找出2的所有因子
+    while (n % 2 == 0) {
+        printf("2 ");
+        n = n / 2;
+    }
+
+    // 找出奇数的因子
+    for (int i = 3; i * i <= n; i += 2) {
+        while (n % i == 0) {
+            printf("%d ", i);
+            n = n / i;
+        }
+    }
+
+    // 如果剩下的n是一个质数并大于2
+    if (n > 2) {
+        printf("%d", n);
+    }
+}
+
+int main() {
+    int num;
+    
+    // 用户输入
+    printf("请输入一个整数：");
+    scanf("%d", &num);
+
+    // 质因数分解
+    printf("质因数分解结果：");
+    prime_factors(num);
+
+    return 0;
+}
+
+```
+
+## 辗转相除法 gcd 和 lcm
 辗转相除法（也称为欧几里得算法）
 
 **定理**：两个整数 \(a\) 和 \(b\) 的最大公约数等于 \(b\) 和 \(a \mod b\) 的最大公约数（这里 \(a \mod b\) 表示 \(a\) 除以 \(b\) 的余数）。
@@ -118,6 +207,100 @@ int main() {
     return 0;
 }
 ```
+在 C 语言中，可以通过 **最大公约数（GCD）** 来计算 **最小公倍数（LCM）**。公式如下：
+
+\[
+\text{LCM}(a, b) = \frac{|a \cdot b|}{\text{GCD}(a, b)}
+\]
+
+以下是一个完整的 C 语言实现，用于计算两个正整数的最小公倍数。
+
+### 代码实现
+
+```c
+#include <stdio.h>
+
+// 求最大公约数（使用欧几里得算法）
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// 求最小公倍数
+int lcm(int a, int b) {
+    return (a / gcd(a, b)) * b; // 防止溢出，先除以 gcd
+}
+
+int main() {
+    int num1, num2;
+    
+    // 输入两个正整数
+    printf("请输入两个正整数：");
+    scanf("%d %d", &num1, &num2);
+
+    if (num1 <= 0 || num2 <= 0) {
+        printf("输入的数字必须是正整数！\n");
+        return 1;
+    }
+
+    // 计算并输出最小公倍数
+    int result = lcm(num1, num2);
+    printf("最小公倍数是：%d\n", result);
+
+    return 0;
+}
+```
+
+---
+
+### 代码说明
+
+1. **最大公约数函数 `gcd`**:
+   - 使用 **欧几里得算法** 计算两个数的最大公约数。
+   - 算法的核心是：\(\text{GCD}(a, b) = \text{GCD}(b, a \% b)\)，直到 \(b = 0\) 时，\(a\) 即为最大公约数。
+
+2. **最小公倍数函数 `lcm`**:
+   - 根据公式 \(\text{LCM}(a, b) = \frac{|a \cdot b|}{\text{GCD}(a, b)}\) 计算最小公倍数。
+   - 为了防止整数溢出，先将 \(a\) 除以 \(\text{GCD}(a, b)\)，再乘以 \(b\)。
+
+3. **主函数 `main`**:
+   - 提示用户输入两个正整数。
+   - 检查输入是否合法（正整数）。
+   - 调用 `lcm` 函数计算最小公倍数，并输出结果。
+
+---
+
+### 示例运行
+
+#### 输入：
+```
+请输入两个正整数：12 18
+```
+
+#### 输出：
+```
+最小公倍数是：36
+```
+
+#### 输入：
+```
+请输入两个正整数：7 5
+```
+
+#### 输出：
+```
+最小公倍数是：35
+``` 
+
+---
+
+### 注意事项
+1. 输入的数必须是正整数，代码中已做简单的输入检查。
+2. 如果需要支持更大的数，建议使用 64 位整数（`long long`）。
 
 ## 判断素数
 判断素数用开方优化 mod 一定要考虑边界条件 2等
@@ -159,10 +342,39 @@ int main() {
 
 
 
-# 线性代数
+# 线性代数(向量)
 
 ## 两数最值的向量表示
 ```
 int max=(a+b+abs(a-b))/2;
 int min=(a+b-abs(a-b))/2;
+```
+
+
+# 分析学(Function)
+## 数组映射(自然数集)
+### 统计字符串字母出现次数
+```
+#include<stdio.h>
+#include<math.h>
+#include<string.h>
+int main(){
+	char ipt;
+	int arr[1001]={0};
+	char str[1001]="abc";
+//	scanf()
+	for(int i=0;i<strlen(str);i++){
+		arr[str[i]]+=1;
+	}
+	printf("%d %d %d",arr[97],strlen(str),(int)'A');
+}
+
+String str=new String("abc");
+        int[] arr=new int[1001];
+        for(int i=0;i<str.length();i++){
+            arr[(int)str.charAt(i)]+=1;
+        }
+        Scanner sc=new Scanner(System.in);
+        String x=sc.nextLine();
+        System.out.println(arr[(int)x.charAt(0)]);
 ```
