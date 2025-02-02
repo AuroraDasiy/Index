@@ -253,6 +253,7 @@ ArrayList<Integer> list=new ArrayList<Integer>()
 ## Math API
 
 ## 小算法
+
 ### 查找
 ![alt text](image-16.png)
 #### 基本查找
@@ -267,7 +268,7 @@ ArrayList<Integer> list=new ArrayList<Integer>()
         return ret;
     }
 ```
-#### 二分查找
+#### 二分查找(有序查找)
 min mid man
 ```
 //二分查找
@@ -293,6 +294,131 @@ min mid man
         return ret;
     }
 ```
+
+二分优化:mid点的取值可以优化
+插值查找:![alt text](image-17.png) 假设分布均匀通过向量计算合适位置
+斐波那契查找
+
+#### 分块查找(美学东)]\\
+
+
+## 集合
+collection 单列集合  map 双列集合
+### Collection
+![alt text](image-28.png)
+ArrayList  LinkedList  有序 可重复 有索引 (向量)
+HashSet->LinkedHashSet   TreeSet  无序 不重复 无索引  (集合无不)
+collection中的通用方法:
+.add() set中重复元素则返回False
+.clear() 
+.remove(元素) 删除成功返回True 失败返回False
+boolean  .contains(元素) 底层是依赖equals()方法比较的是地址值,如果想让比较属性值则需要右键生成在类中重写equals方法 
+boolean .isEmpty()   int .size() 给出集合长度
+#### 遍历
+##### 迭代器(iterator)
+迭代器是一个接口没法new对象只能赋值对象
+set中没索引没法for遍历所以要迭代器 迭代器不依赖索引
+```
+Iterator<Stirng> it=list.iterator();
+while(it.hashNext()){  //若指针这有元素 则.hashNext()返回True 没元素返回False
+    String str=it.next();  //获取元素并移动指针
+}
+// 迭代器没索引所以是找不到元素不是索引越界
+// 指针不复位 循环完就不行了 二次迭代得获取一个新的迭代器
+// hasNext() 和 next()  对应循环只能用一次否则移动多次报错
+// 迭代时候不能用集合的删除增加方法否则报错 只能用it.remove()迭代器删除
+```
+
+##### 增强for遍历 (底层就是迭代器简化迭代器的书写) 单列集合和数组才能用增强for遍历
+Collection<String> coll =new ArrayList<>();
+for(String i : coll){
+    //这个i就是个变量 不是coll集合中的元素  i在迭代器上迭代器赋给i值
+}
+
+##### Lambda 表达式遍历
+遍历使用情况![alt text](image-18.png)
+
+### List
+.add(int index,元素) 在列表中指定的位置上插入指定的元素。将当前处于该位置（如果有的话）和任何后续元素的元素移到右边（添加一个到它们的索引）。 
+
+.remove(index)  .remove(元素)  两种删除方式 ![alt text](image-19.png)
+方法重载的选择
+列表迭代器 ListIterator 和 Iterator区别是可以add元素 其他 hasNext() next() remove() remove必须next 取出来才能用
+迭代器迭代不能用集合的方法 add remove 元素 得用迭代器的方法 add remove
+add 后遍历仍然是按照原集合遍历;
+summary:*** 迭代器指针前进行remove或者add这样就不影响原来的list了 ***
+
+遍历的选择:![alt text](image-20.png)
+
+
+
+## 数据结构
+### 栈
+进栈 出栈 先进后出  后进先出
+### 队列
+   -------
+-->       -->  先进先出后进后出
+   -------
+### 数组
+查询快 增删慢
+### 链表
+单向 双向 查询慢 首尾操作快
+
+# tips 机房没idea得用eclipse 快捷方式 -nl en(or zh) 切换中英文
+eclipse alt+/  是快速补全
+
+## ArrayList
+底层原理:![alt text](image-21.png)
+## LinkedList
+双链表
+
+泛型 <数据类型>仅能支持引用数据类型![alt text](image-22.png)
+
+## 树
+树的节点的度<=2 叫二叉树
+二叉查找树  : 小的左边 大的右边 一样的不存;
+二叉树遍历![alt text](image-23.png) 常用中序遍历因为按照从小到大的顺序遍历;
+平衡二叉树![alt text](image-24.png)
+二叉查找树 构造平衡二叉树 左旋和右旋
+左旋![alt text](image-25.png)
+右旋 ![alt text](image-26.png)
+需要旋转的四种情况:https://www.bilibili.com/video/BV17F411T7Ao/?p=195&share_source=copy_web&vd_source=4dd7efe758648db09e00b24d05324a19
+平衡二叉树 添加节点需要旋转的次数太多
+红黑树(平衡二叉B树) :构造规则
+1.两端(根部和叶子)是黑的
+2.红红不能相连
+3.任意节点单向到叶子 之间黑节点数目相同;
+添加节点默认红色节点效率高
+![alt text](image-27.png)
+
+## Set
+无序不同;可对数据进行去重
+Set<String> s =new HashSet<>();
+s.add("Mike")  True
+s.add("Mike") False 重复去重
+
+Iterator<String> it=s.iterator();
+while(it.hasNext()){
+    String str = s.next();
+    it.remove();
+}
+
+for(String str:s){
+    sout(str);
+}
+
+# 调试很重关于 step over step into  step out
+
+### HashSet  
+底层是hash表,数组+链表+红黑树实现的
+哈希值 : 对象到整数的映射
+hashCode()类比 .contains()方法 重写方法
+![alt text](image-29.png)
+数组是N->数据  哈希表是数据->N  映射不同
+
+
+
+
 
 
 
