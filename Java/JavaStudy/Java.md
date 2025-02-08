@@ -1,5 +1,8 @@
+# ReadMe
+与java有关的语法  API 题目等;数据结构 算法具体的知识 与之有关的技巧不写入;
 # Java Grammar and API
 ## Grammar
+- java定义需要四段 声明  public static int binarySearch(int[] arr,int x){};   public abstract void move();
 - interface 和 抽象方法 接口是子集不同的方法 抽象方法是子集中共有的方法  public abstract void f();
 - static 静态修饰符 常用于辅助方法和辅助类 与类中的变量无关联 静态(孤立的);  
 如 Arrays.sort(int[]) 静态方法不是类的方法是函数

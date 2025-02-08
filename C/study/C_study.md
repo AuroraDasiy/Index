@@ -1,6 +1,8 @@
+# ReadMe
+完全备战转专业考试用的;
 # 算法
 ## 冒泡算法
-```
+```C
 void optimizedBubbleSort(int arr[], int n) {
     for (int i = 0; i < n-1; i++) {
         int swapped = 0;  // 标记是否发生了交换
@@ -20,7 +22,7 @@ void optimizedBubbleSort(int arr[], int n) {
 }
 ```
 ## 二分查找
-```
+```c
 int ef(int arr[],int n,int tg){
 	int max=n-1;int min =0;
 	while(min!=max && min<max){
