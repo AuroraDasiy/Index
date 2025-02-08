@@ -1,7 +1,15 @@
-# 库函数
+# Java Grammar and API
+## Grammar
+- interface 和 抽象方法 接口是子集不同的方法 抽象方法是子集中共有的方法  public abstract void f();
+- static 静态修饰符 常用于辅助方法和辅助类 与类中的变量无关联 静态(孤立的);  
+如 Arrays.sort(int[]) 静态方法不是类的方法是函数
 - 函数式接口: Consumer<Integer> comsumer ;consumer.accept()接受参数 **并调用函数**
 lambda表达式简化函数  (E args)->{sout(args);}
-
+## API
+### Arrays类
+- Arrays.sort(int [] arr); 将数组arr 升序排列 
+- Arrays.binarySearch(int[] arr,int tg); 
+### System类
 - System.arraycopy() 是 Java 中一个非常常用的用于数组拷贝的静态方法。它的作用是将源数组中的一部分或全部元素复制到目标数组中的指定位置。这个方法是系统级的，因此执行效率比较高。
 public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
 参数说明：
@@ -10,21 +18,21 @@ srcPos：源数组的起始位置（从该位置开始复制）。
 dest：目标数组（将元素复制到这个数组）。
 destPos：目标数组的起始位置（复制到目标数组的哪个位置）。
 length：要复制的元素个数。
-
-- interface 和 抽象方法 接口是子集不同的方法 抽象方法是子集中共有的方法  public abstract void f();
-
+### Math 类
+- Math.min()  
+Math.max 同理
 
 
 
 # Tips
-- static 静态修饰符 常用于辅助方法和辅助类 与类中的变量无关联 静态(孤立的);  
+
 -  add remove set get
 任何数据结构都应该提供增删改查的方法
 add 末尾加入 中间插入
 remove 索引删除 元素删除
 set 索引改元素
 get 查 元素 查索引
-- 
+- 空方法 结束可以直接 return 返回;
 
 # 二分查找
 数组升序排列;

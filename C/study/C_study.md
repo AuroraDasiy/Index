@@ -1,3 +1,46 @@
+# 算法
+## 冒泡算法
+```
+void optimizedBubbleSort(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        int swapped = 0;  // 标记是否发生了交换
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                swapped = 1;  // 标记发生了交换
+            }
+        }
+        // 如果没有发生交换，说明数组已经有序
+        if (swapped == 0) {
+            break;
+        }
+    }
+}
+```
+## 二分查找
+```
+int ef(int arr[],int n,int tg){
+	int max=n-1;int min =0;
+	while(min!=max && min<max){
+		int mid=(max+min)/2;
+		if(arr[mid]==tg){
+			max=mid;min=mid;
+		}else if(arr[mid]<tg){
+			min=mid+1;
+		}else{
+			max=mid-1;
+		}
+	}
+	if(max==min){
+		return max;
+	}else if(max<min){
+		return -1;
+	}
+}
+```
+
 # c primer plus
 oop 是一门哲学,对语言建模适应问题,
 
@@ -289,3 +332,15 @@ int main() {
 }
 ```
 double 用%lf  %lf 也能整数输入
+(int)(a/b) 加括号这个得
+
+
+
+
+# xmuoj题目
+
+# 复习提单
+## 洛谷
+P1888
+P5707
+## xmuoj
