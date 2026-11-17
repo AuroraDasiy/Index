@@ -4,17 +4,19 @@
 
 更改 `.exe` 文件的图标需要使用专门的工具或软件来修改可执行文件的资源。以下是几种常见的方法：
 
-### 方法一：使用 Resource Hacker
+### 方法一：使用 Resource Hacker or [Resource Cracker](https://www.pelock.com/products/resource-cracker)
 
-Resource Hacker 是一个免费的工具，可以用于查看、修改、添加、删除和提取 Windows 可执行文件的资源，包括图标。
+Resource Hacker or [Resource Cracker](https://www.pelock.com/products/resource-cracker) 是一个免费的工具，可以用于查看、修改、添加、删除和提取 Windows 可执行文件的资源，包括图标。
 
 #### 步骤：
 
 1. **下载并安装 Resource Hacker**：
+2. [Resource Cracker](https://www.pelock.com/products/resource-cracker)
    - 从 [Resource Hacker 官网](http://www.angusj.com/resourcehacker/) 下载并安装软件。
+   - [Resource Cracker](https://www.pelock.com/products/resource-cracker)
 
 2. **打开exe文件**：
-   - 启动 Resource Hacker，点击“File” > “Open”，选择你要更改图标的 `.exe` 文件。
+   - 启动 Resource Hacker or [Resource Cracker](https://www.pelock.com/products/resource-cracker)，点击“File” > “Open”，选择你要更改图标的 `.exe` 文件。
 
 3. **找到图标资源**：
    - 在左侧的树状结构中展开“Icon Group”节点，你会看到当前 `.exe` 文件中的图标资源。
